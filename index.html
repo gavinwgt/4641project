@@ -9,43 +9,48 @@
     <section id="summary">
         <h1>Summary</h1>
         <!-- Include your infographic here -->
-        <!--img src="path-to-your-infographic.png" alt="Summary Infographic" -->
+        <!--img src="https://www.canva.com/design/DAFmCU--dnQ/htYStvFvAEWGBjAxkYJ4Tw/edit?utm_content=DAFmCU--dnQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebuttong" alt="Summary Infographic" -->
     </section>
 
     <!-- Introduction/Background -->
     <section id="introduction">
         <h1>Introduction/Background</h1>
-        <!-- Your text here -->
-        <p>...</p>
+        
+        <p>If someone wants to expand their music taste but has trouble finding songs they might like, it might be easier to gain insight on songs that they already listen to help them find different types of music easier. In this project, our objective is to use characteristics of a song (lyrics, beats, etc.) to create an analysis of the attitude that the song is trying to portray. Today in similar projects, many relied on the repetition of lyrics that were used to give a final analysis. However, there is more to the song than just the lyrics. The instrumental and the way the singer sings the song also affects the sentiment. For this reason, we want to attempt to factor in other portions of the music such as genre and musical characteristics to also have a factor in our analysis.</p>
     </section>
 
     <!-- Methods -->
     <section id="methods">
         <h1>Methods</h1>
-        <!-- Your text here -->
-        <p>...</p>
+        <p>The data we plan to use is coming from The APIs of Spotify and Genius and the song itself. The Genius API gives us access to lyrics of a given song, and the Spotify API gives us useful statistics, such as danceability and genre, that will be beneficial towards our analysis of the song. The datatype of these given data types will be text and numerical values. with the song itself, it will allow us to factor the audio of the instrumental into our analysis. As for the target, most of the data is discrete, meaning that it can be represented as an integer or something countable. As for the size of the dataset, we do not have a planned amount but will have an appropriate amount based on the features we implement. [Currently, the various datasets we’ve explored have ranged from 30 to 60kB]</p>
+<p>In our approach, we aim to incorporate various factors beyond just the lyrics of a song to create a more comprehensive sentiment analysis. While previous attempts have primarily relied on the repetition of lyrics for analysis, we recognize that this often isn’t enough to ascertain the sentiment of a song. Consequently, we plan to factor in other aspects such as genre and musical characteristics obtained from the Spotify API. By considering these multiple factors, we expect to provide a more accurate and nuanced analysis of a song's sentiment, and better serve our purpose.</p>
+<p>As for our approach to the problem, we will have to preprocess our data focused around the lyrics before having it dealt with the model. In our preprocess, We start off with removing stop words (and, I, etc..), and storing the remaining words in a list. Next, we apply text normalization to the lyrics. This will allow us to reduce the amount of information the model had to deal with, and only focus on core parts of the lyrics. With the remaining words, we can use a bigram to group words that are used together frequently. With this preprocessing, it will allow our model to process our data more efficiently.</p>
+<p>For the supervised approach, we will use labeled data to train a model that can predict the sentiment of a song based on its lyrics and Spotify statistics. We will use the lyrics obtained from the Genius API as input text and the numerical values from the Spotify API as additional features. Since the target variable is sentiment, which can be classified into positive, negative, or neutral, it is a discrete variable. We will convert it into an integer representation, such as 0 for negative, 1 for neutral, and 2 for positive sentiment. The size of the dataset will be determined based on the features we incorporate.</p>
+<p>Similarly for the unsupervised approach to our project, we will be using word2vec to convert bigrams into values for processing with a context window of 5. Our methodology is flexible, however; we also plan to use GMM with 3 clusters on the bigram vector. The three clusters used here will represent positive, negative, or neutral sentiment, and will be used alongside the Spotify database for classification. A weighted sum of the probabilities of the bigram points belonging to the cluster centers can be used to then classify the entire song as having probabilities of how likely they represent one of the three sentiments.</p>
+<p>When working on the project, multiple factors will affect our ability to complete the project. The risks that we face is that we do not properly set up the data correctly to produce the desired results. If the labels are not assigned to the correct feature of the data, or the label is not used appropriately, then we run the risk of having data misrepresented and gaining false results. </p>
     </section>
 
     <!-- Results -->
     <section id="results">
         <h1>Results</h1>
-        <!-- Your text here -->
-        <p>...</p>
+        
+        <p>If successful, when a user inputs an arbitrary song title and the artist, our project should be able to return a sentiment analysis based on the different factors in the song. To make sure our project gives the best analysis, we’re going to test our success for accuracy with our model and check the quality and precision of our results. With our new approach, we will be able to gain a more accurate analysis of the songs we listen to. In terms of our timeline, we plan on having the supervised model done around the time of the midterm report, and the unsupervised model finished by the final report. If everything goes to plan, by the end of this Term, we should have a product that is able to return an analysis of a song that is inputted</p>
     </section>
 
     <!-- Discussion -->
     <section id="discussion">
         <h1>Discussion</h1>
-        <!-- Your text here -->
-        <p>...</p>
+        <p>If successful, our results can allow anyone who desires to classify music into deeper general sentiments to have that ability, whether it’s to find music that they find interest in or to make use of it to recommend users their sentiment preferences. Creating sentiment classification that factors in other characteristics other than lexicon-based assignment paves the way for a difference in the quality of sentiment classification in general, and this project is developed in the direction of prioritizing that difference.</p>
     </section>
 
     <!-- References -->
     <section id="references">
         <h1>References</h1>
         <ul>
-            <!-- Your references here -->
-            <li>...</li>
+            <li>Alankarmahajan. (2023, March 13). Exploring Spotify Dataset. Kaggle. https://www.kaggle.com/code/alankarmahajan/exploring-spotify-dataset</li>
+            <li>Sveta151. (2022, September 5). Spotify Top Chart Songs 2022. Kaggle. https://www.kaggle.com/datasets/sveta151/spotify-top-chart-songs-2022</li>
+            <li>Spotify charts - spotify charts are made by fans. Spotify Charts - Spotify Charts are made by fans. (n.d.). https://charts.spotify.com/home</li>
+            <li>Genius API documentation. Genius API. (n.d.). https://docs.genius.com/</li>
         </ul>
     </section>
 
