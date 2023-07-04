@@ -172,7 +172,7 @@ token = get_token()
 n = make_data(token)
 print(n)
 # print(top)
-# np.savetxt("data.csv", n, delimiter=",")
+# np.savetxt("spotdata.csv", n, delimiter=",")
 # np.savetxt("name.csv", n, delimiter=",", fmt="%s")
 
 # d = find_avg_sentiment()
